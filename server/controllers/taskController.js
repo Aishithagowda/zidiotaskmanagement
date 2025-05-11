@@ -35,9 +35,9 @@ const createTask = asyncHandler(async (req, res) => {
     const task = await Task.create({
       title,
       team,
-      stage: stage.toLowerCase(),
+      stage: stage?.toLowerCase(),
       date,
-      priority: priority.toLowerCase(),
+      priority: priority?.toLowerCase(),
       assets,
       activities: activity,
       links: newLinks || [],
@@ -80,7 +80,7 @@ const duplicateTask = asyncHandler(async (req, res) => {
 
     //alert users of the task
     let text = "New task has been assigned to you";
-    if (team.team?.length > 1) {
+    if (task.team?.length > 1) {
       text = text + ` and ${task.team?.length - 1} others.`;
     }
 
@@ -142,14 +142,14 @@ const updateTask = asyncHandler(async (req, res) => {
       newLinks = links.split(",");
     }
 
-    task.title = title;
-    task.date = date;
-    task.priority = priority.toLowerCase();
-    task.assets = assets;
-    task.stage = stage.toLowerCase();
-    task.team = team;
-    task.links = newLinks;
-    task.description = description;
+    task.title = title || task.title;
+    task.date = date || task.date;
+    task.priority = priority?.toLowerCase() || task.priority;
+    task.assets = assets || task.assets;
+    task.stage = stage?.toLowerCase() || task.stage;
+    task.team = team || task.team;
+    task.links = newLinks || task.links;
+    task.description = description || task.description;
 
     await task.save();
 

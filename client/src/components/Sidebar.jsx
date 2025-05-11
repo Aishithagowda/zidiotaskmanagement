@@ -44,11 +44,11 @@ const linkData = [
     link: "team",
     icon: <FaUsers />,
   },
-  {
-    label: "Status",
-    link: "status",
-    icon: <IoCheckmarkDoneOutline />,
-  },
+  // {
+  //   label: "Status",
+  //   link: "status",
+  //   icon: <IoCheckmarkDoneOutline />,
+  // },
   {
     label: "Trash",
     link: "trashed",
@@ -103,8 +103,8 @@ const Sidebar = () => {
 
       <div className=''>
         <button className='w-full flex gap-2 p-2 items-center text-lg text-gray-800 dark:text-white'>
-          <MdSettings />
-          <span>Settings</span>
+          {/* <MdSettings />
+          <span>Settings</span> */}
         </button>
       </div>
     </div>

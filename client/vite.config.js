@@ -11,6 +11,15 @@ export default defineConfig({
       "/api": {
         target: "http://localhost:8800",
         changeOrigin: true,
+        secure: false,
+        configure: (proxy, options) => {
+          proxy.on("proxyReq", (proxyReq, req) => {
+            // Force cookies to be sent with the request
+            if (req.headers.cookie) {
+              proxyReq.setHeader("cookie", req.headers.cookie);
+            }
+          });
+        },
       },
     },
   },

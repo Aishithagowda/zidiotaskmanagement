@@ -107,7 +107,7 @@ const App = () => {
             <Route path='/trashed' element={<Trash />} />
             <Route path='/task/:id' element={<TaskDetail />} />
             <Route path='/team' element={<Users />} />
-            <Route path='/status' element={<StatusPage />} />
+            {/* <Route path='/status' element={<StatusPage />} /> */}
           </Route>
 
           <Route path='/log-in' element={<Login />} />
