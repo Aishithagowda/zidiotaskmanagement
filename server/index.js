@@ -17,7 +17,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["https://zidiotaskmanagement-seven.vercel.app/", "http://localhost:3000", "http://localhost:3001"],
+    origin: ["https://zidiotaskmanagement-seven.vercel.app", "http://localhost:3000", "http://localhost:5173"],
     methods: ["GET", "POST", "DELETE", "PUT"],
     credentials: true,
   })
