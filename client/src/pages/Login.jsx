@@ -63,7 +63,7 @@ const Login = () => {
                 Welcome back!
               </p>
               <p className='text-center text-base text-gray-700 dark:text-gray-500'>
-                Keep all your credetials safe!
+                Keep all your credentials safe!
               </p>
             </div>
             <div className='flex flex-col gap-y-5'>
@@ -86,6 +86,14 @@ const Login = () => {
                 className='w-full rounded-full'
                 register={register("password", {
                   required: "Password is required!",
+      //             minLength: {
+      //   value: 8,
+      //   message: "Password must be at least 8 characters long",
+      // },
+      // pattern: {
+      //   value: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/,
+      //   message: "Password must contain at least one letter and one number",
+      // },
                 })}
                 error={errors.password ? errors.password?.message : ""}
               />
